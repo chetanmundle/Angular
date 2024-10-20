@@ -1,0 +1,55 @@
+<br /><br />
+
+<form class="row g-3 needs-validation">
+  <div class="col-md-3">
+    <label for="country" class="form-label">Country</label>
+    <select
+      class="form-select"
+      name="country"
+      [(ngModel)]="Data.country"
+      name="country"
+      (change)="onCountryChange()"
+    >
+      <option selected disabled value="">Choose...</option>
+      <!-- <option *ngFor="let country of countries" [value]="country.country_name">
+        {{ country.country_name }}
+      </option> -->
+      @for (c of countries; track $index) {
+      <option value="{{ c.country_name }}">
+        {{ c.country_name }}
+      </option>
+      }
+    </select>
+  </div>
+
+  <div class="col-md-3">
+    <label for="country" class="form-label">States</label>
+    <select
+      class="form-select"
+      name="state"
+      [(ngModel)]="Data.state"
+      (change)="onChangeState()"
+    >
+      <option selected disabled value="">Choose...</option>
+      @for (st of states; track $index) {
+      <option value="{{ st.state_name }}">
+        {{ st.state_name }}
+      </option>
+      }
+    </select>
+  </div>
+
+  <div class="col-md-3">
+    <label for="country" class="form-label">City</label>
+    <select class="form-select" name="country" [(ngModel)]="Data.city">
+      <option selected disabled value="">Choose...</option>
+      @for (c of cities; track $index) {
+      <option value="{{ c.city_name }}">{{ c.city_name }}</option>
+      }
+    </select>
+  </div>
+</form>
+
+<br /><br />
+
+{{ Data | json }}
