@@ -1,0 +1,24 @@
+<div>
+  <h3>"Single Value</h3>
+  <div>FirstName : {{ firstName() }}</div>
+  <div>LastName : {{ lastName() }}</div>
+  <div>FullName (Normal): {{ fullNameNormal }}</div>
+  <div>FullName : {{ fullName() }}</div>
+  <div>
+    <button (click)="onChangeFirstName()">Change FirstName</button> &nbsp;&nbsp;
+    <button (click)="onChangeLastName()">Change LastName</button>
+  </div>
+  <br /><br />
+  <h3>With Array</h3>
+  <div>
+    {{ city() }}
+  </div>
+  <button (click)="onClickAddCity()">Add City</button>
+
+  <h3>With Object</h3>
+  <div>
+    {{ data().name }} <br>
+    {{ data().city }}
+  </div>
+  <button (click)="onClickChangeCity()">Change City</button>
+</div>
